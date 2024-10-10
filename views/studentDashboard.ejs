@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Student Dashboard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/studentDashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/jobs">View Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/studentApplications"
+                >My Applications</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-custom shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Student Information</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Name:</strong>
+                  <%= user.name%>
+                </li>
+                <li class="list-group-item">
+                  <strong>Email:</strong>
+                  <%= user.email%>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Applications Stats Section -->
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Total Applications</h5>
+              <p class="card-text display-6">3</p>
+              <!-- Update this number dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- List of Applied Jobs Section -->
+    <div class="container mt-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Applied Jobs</h5>
+          <ul class="list-group">
+            <li class="list-group-item">Software Engineer at XYZ Corp</li>
+            <li class="list-group-item">Web Developer at Wipro</li>
+            <li class="list-group-item">AI Research Intern at TechLabs</li>
+            <!-- Add more jobs as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
