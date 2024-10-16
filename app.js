@@ -12,8 +12,7 @@ app.set("view engine", "ejs");
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb+srv://susmitha:susmic39@cluster0.tp7gu.mongodb.net/", {
-  })
+  .connect("mongodb://127.0.0.1:27017/campusRecruitment", {})
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
@@ -24,13 +23,8 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl:"mongodb+srv://susmitha:susmic39@cluster0.tp7gu.mongodb.net/",
+      mongoUrl: "mongodb://127.0.0.1:27017/campusRecruitment",
     }),
-    cookie: {
-      secure: true, // Only send cookies over HTTPS
-      sameSite: 'Strict', // Helps prevent CSRF
-      maxAge: 1000 * 60 * 60 * 24 // Cookie expires after 1 day
-    },
   })
 );
 
