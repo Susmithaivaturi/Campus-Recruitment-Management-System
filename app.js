@@ -26,8 +26,13 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/campusRecruitment",
+      mongoUrl:"mongodb+srv://susmitha:susmic39@cluster0.tp7gu.mongodb.net/",
     }),
+    cookie: {
+      secure: true, // Only send cookies over HTTPS
+      sameSite: 'Strict', // Helps prevent CSRF
+      maxAge: 1000 * 60 * 60 * 24 // Cookie expires after 1 day
+    },
   })
 );
 
