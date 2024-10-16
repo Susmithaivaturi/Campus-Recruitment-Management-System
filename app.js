@@ -13,8 +13,6 @@ app.set("view engine", "ejs");
 // Connect to MongoDB
 mongoose
   .connect("mongodb+srv://susmitha:susmic39@cluster0.tp7gu.mongodb.net/", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
