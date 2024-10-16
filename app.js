@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/campusRecruitment", {
+  .connect("mongodb+srv://susmitha:susmic39@cluster0.tp7gu.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
