@@ -34,8 +34,16 @@ html(lang="en")
           // Dynamic Rows
           each application in applications
             tr
-              td= application.student.name
-              td= application.job.jobTitle
+              if application.student
+                td= application.student.name
+              else
+                td No Student Info
+              
+              if application.job
+                td= application.job.jobTitle
+              else
+                td No Job Info
+              
               td
                 form(action="/manageApplication", method="POST")
                   input(type="hidden", name="applicationId", value=application._id)
