@@ -2,13 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-// Set the view engine to EJS
-app.set("view engine", "ejs");
+// Set the view engine
+app.set("view engine", "jade");
 
 // Connect to MongoDB
 mongoose
@@ -31,14 +30,12 @@ app.use(
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static HTML files for register and login
-app.use(express.static(path.join(__dirname, "views")));
-
 // Use the auth routes
 app.use(authRoutes);
 
+// Home route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "home.html"));
+  res.render("home");
 });
 
 // Start the server

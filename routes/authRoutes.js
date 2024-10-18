@@ -6,10 +6,10 @@ const jobController = require("../controllers/jobController");
 const User = require("../models/User");
 
 // Routes for register and login
-router.get("/register", (req, res) => res.sendFile(path.join(__dirname, "../views", "register.html")));
+router.get("/register", (req, res) => res.render("register"));
 router.post("/register", authController.registerUser);
 
-router.get("/login", (req, res) => res.sendFile(path.join(__dirname, "../views", "login.html")));
+router.get("/login", (req, res) => res.render("login"));
 router.post("/login", authController.loginUser);
 
 router.get("/logout", authController.logoutUser);
@@ -29,7 +29,7 @@ router.get("/studentDashboard", authController.isLoggedIn, async (req, res) => {
 });
 
 router.get("/officerDashboard", authController.isLoggedIn, (req, res) => {
-    res.sendFile(path.join(__dirname, "../views", "officerDashboard.html"));
+    res.render("officerDashboard");
 });
 
 // Job posting route
